@@ -2,8 +2,8 @@
 Contributors: taehan
 Donate link: 
 Tags: BuddyPress, tinyMCE, WYSIWYG, editor, forum, form validate
-Requires at least: 3.0.0
-Tested up to: 3.1.1
+Requires at least: WordPress 3.0.0, BuddyPress 1.2.8
+Tested up to: WordPress 3.1.1, BuddyPress 1.2.8
 Stable tag: 1.0
 
 This plugin has the ability to convert HTML TEXTAREA fields to TinyMCE for BuddyPress Forum.

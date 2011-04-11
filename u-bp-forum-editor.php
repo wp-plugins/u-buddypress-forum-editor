@@ -6,6 +6,8 @@ Description: This plugin has the ability to convert HTML TEXTAREA fields to Tiny
 Author: Taehan Lee
 Author URI: http://urlless.com
 Version: 1.0
+Requires at least: WordPress 3.0.0, BuddyPress 1.2.8
+Tested up to: WordPress 3.1.1, BuddyPress 1.2.8
 */
 
 class UBPForumEditor {
