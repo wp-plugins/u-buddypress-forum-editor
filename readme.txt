@@ -12,6 +12,9 @@ This plugin has the ability to convert HTML TEXTAREA fields to TinyMCE for Buddy
 
 This plugin has the ability to convert HTML TEXTAREA fields to TinyMCE for BuddyPress Forum. Several options are provided, such as customizing button group, form validation, etc.
 
+If anything does not work please leave a comment at
+http://urlless.com/buddypress-plugin-u-buddypress-forum-editor/
+
 == Installation ==
 1. Upload <code>u-buddypress-forum-editor</code> folder to the <code>/wp-content/plugins</code> directory. 
 2. Activate the plugin through the 'Plugins' menu in WordPress.
