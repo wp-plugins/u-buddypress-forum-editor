@@ -5,7 +5,7 @@ Plugin URI: http://urlless.com/buddypress-plugin-u-buddypress-forum-editor/
 Description: This plugin has the ability to convert HTML TEXTAREA fields to TinyMCE for BuddyPress Forum. Several options are provided, such as customizing button group, form validation, etc.
 Author: Taehan Lee
 Author URI: http://urlless.com
-Version: 1.0
+Version: 1.0.1
 */
 
 class UBPForumEditor {
@@ -175,8 +175,12 @@ jQuery(function(){ bp_forum_form_validate.init({
 	function admin_menu(){
 		register_setting($this->plugin_id.'_option', $this->plugin_id, array( &$this, 'admin_page_vailidate'));
 		
-		$page = is_multisite() ? 'options-general.php' : 'bp-general-settings';
-		add_submenu_page( $page, 'U '.__('BuddyPress Forum Editor', $this->plugin_id), 'U '.__('Forum Editor', $this->plugin_id), 'manage_options', $this->plugin_id, array(&$this, 'admin_page') );
+		if( is_multisite() ){
+			add_submenu_page( 'options-general.php', 'U '.__('BuddyPress Forum Editor', $this->plugin_id), 'U '.__('Forum Editor', $this->plugin_id), 'manage_network_options', $this->plugin_id, array(&$this, 'admin_page') );
+		}else{
+			add_submenu_page( 'bp-general-settings', 'U '.__('BuddyPress Forum Editor', $this->plugin_id), 'U '.__('Forum Editor', $this->plugin_id), 'manage_options', $this->plugin_id, array(&$this, 'admin_page') );
+		}
+		
 	}
 	
 	function admin_page(){
