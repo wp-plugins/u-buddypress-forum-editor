@@ -5,13 +5,13 @@ Plugin URI: http://urlless.com/buddypress-plugin-u-buddypress-forum-editor/
 Description: This plugin is tinyMCE WYSIWYG HTML editor for BuddyPress Forum.
 Author: Taehan Lee
 Author URI: http://urlless.com
-Version: 1.1
+Version: 1.1.1
 */
 
 class UBPForumEditor {
 	
 var $id = 'ubpfeditor';
-var $ver = '1.1';
+var $ver = '1.1.1';
 var $url;
 
 function UBPForumEditor(){
@@ -38,23 +38,19 @@ function bp_init(){
 		if( empty($opts['enable']) || (empty($opts['enable_topic']) AND empty($opts['enable_reply'])) || empty($opts['buttons1']) ) 
 			return false;
 		
-		if( !empty($opts['form_validate']) )
+		if( !empty($opts['form_validate']) ){
 			wp_enqueue_script( $this->id.'-form-validate', $this->url.'inc/form-validate.js', array('jquery'), $this->ver);
 			wp_localize_script( $this->id.'-form-validate', $this->id.'_form_validate_vars', array(
 				'title_error' => __('Error: Please enter a title.', $this->id),
 				'content_error' => __('Error: Please enter content.', $this->id),
 				'group_id_error' => __('Error: Please select the Group Forum.', $this->id),
 			));
+		}
 		
-		add_filter( 'bp_forums_allowed_tags', array(&$this, 'allowed_tags'), 1);
+		remove_filter( 'bp_get_the_topic_latest_post_excerpt', 'bp_forums_filter_kses', 1 );
+		remove_filter( 'bp_get_the_topic_post_content', 'bp_forums_filter_kses', 1 );
 		add_action( 'wp_footer', array(&$this, 'the_editor'));
 	}
-}
-
-function options_validate(){
-	
-		
-	return true;
 }
 
 function the_editor( ) {
@@ -117,6 +113,18 @@ function the_editor( ) {
 		}
 	}
 	
+	$allowed_tags_array = array();
+	$allowed_tags = $this->allowed_tags();
+	foreach( $allowed_tags as $k=>$v){
+		$attr = '';
+		if( !empty($v) ) {
+			$attr = '['.join('|', array_keys($v)).']';
+		}
+		$allowed_tags_array[] = $k.$attr;
+	}
+	$allowed_tags = join(',', $allowed_tags_array);
+	
+	
 	$initArray = array (
 		'mode' => 'specific_textareas',
 		'editor_selector' => 'theEditor',
@@ -131,7 +139,7 @@ function the_editor( ) {
 		'language' => $mce_locale,
 		'plugins' => implode( ',', $plugins ),
 		'content_css' => $editor_style,
-		'valid_elements' => '*[*]',
+		'valid_elements' => $allowed_tags,
 		'invalid_elements' => 'script,style,link',
 		'theme_advanced_toolbar_location' => 'top',
 		'theme_advanced_toolbar_align' => 'left',
