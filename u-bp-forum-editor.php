@@ -301,7 +301,7 @@ function admin_page(){
 		
 		<p style="padding:10px; color:gray;">* <?php printf(__('This plugin is using %s as a WYSIWYG HTML editor.', $this->id), '<a href="http://tinymce.moxiecode.com/" target="_blank">TinyMCE</a>')?></p>
 		
-		<form action="options.php" method="post">
+		<form action="<?php echo admin_url('options.php')?>" method="post">
 			<?php settings_fields($this->id.'_options'); ?>
 			<table class="form-table">
 			
