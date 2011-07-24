@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ubpfeditor\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-11 12:54+0900\n"
-"PO-Revision-Date: 2011-04-11 12:54+0900\n"
+"POT-Creation-Date: 2011-07-24 11:54+0900\n"
+"PO-Revision-Date: 2011-07-24 11:54+0900\n"
 "Last-Translator: taehan lee <urlless@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,107 +14,167 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: u-bp-forum-editor.php:136
+#: u-bp-forum-editor.php:44
 msgid "Error: Please enter a title."
 msgstr "에러: 제목을 입력하세요."
 
-#: u-bp-forum-editor.php:137
-msgid "Error: Please enter a content."
+#: u-bp-forum-editor.php:45
+msgid "Error: Please enter content."
 msgstr "에러: 내용을 입력하세요."
 
-#: u-bp-forum-editor.php:138
-msgid "Error: Please select a Group Forum."
+#: u-bp-forum-editor.php:46
+msgid "Error: Please select the Group Forum."
 msgstr "에러: 그룹 포럼을 선택하세요."
 
-#: u-bp-forum-editor.php:180
-#: u-bp-forum-editor.php:198
+#: u-bp-forum-editor.php:278
+#: u-bp-forum-editor.php:295
 msgid "BuddyPress Forum Editor"
 msgstr "버디프레스 포럼 편집기"
 
-#: u-bp-forum-editor.php:180
+#: u-bp-forum-editor.php:279
 msgid "Forum Editor"
 msgstr "포럼 편집기"
 
-#: u-bp-forum-editor.php:200
+#: u-bp-forum-editor.php:299
 #, php-format
 msgid "This plugin is using %s as a WYSIWYG HTML editor."
 msgstr "이 플러그인은 WYSIWYG HTML 편집기인 %s를 사용하고 있습니다."
 
-#: u-bp-forum-editor.php:207
-#: u-bp-forum-editor.php:209
-#: u-bp-forum-editor.php:229
+#: u-bp-forum-editor.php:306
+#: u-bp-forum-editor.php:308
+#: u-bp-forum-editor.php:338
 msgid "Enable"
 msgstr "활성화"
 
-#: u-bp-forum-editor.php:211
+#: u-bp-forum-editor.php:310
 msgid "Enable Topic editor"
 msgstr "토픽을 작성할 때 편집기 사용"
 
-#: u-bp-forum-editor.php:212
+#: u-bp-forum-editor.php:311
 msgid "Enable Reply editor"
 msgstr "답글을 작성할 때 편집기 사용"
 
-#: u-bp-forum-editor.php:227
-msgid "Form Validate"
-msgstr "폼 검사"
-
-#: u-bp-forum-editor.php:230
-msgid "Validating whether form fields are filled out before submission."
-msgstr "포스트 하기 전에 폼 필드들에 값이 입력되었는지 확인. "
-
-#: u-bp-forum-editor.php:235
-msgid "Primary Buttons group"
-msgstr "첫번째 버튼 꾸러미"
-
-#: u-bp-forum-editor.php:238
-#: u-bp-forum-editor.php:245
-msgid "Separate buttons with commas. Pipe character( | ) is visual separator."
-msgstr "콤마로 버튼을 구분하세요. 파이프 문자(|)는 시각적으로 분리해주는 역할을 해줍니다."
-
-#: u-bp-forum-editor.php:242
-msgid "Secondary Buttons group"
-msgstr "두번째 버튼 꾸러미"
-
-#: u-bp-forum-editor.php:249
-msgid "Available button reference"
-msgstr "사용가능한 버튼 목록"
-
-#: u-bp-forum-editor.php:256
+#: u-bp-forum-editor.php:316
 msgid "Editor Size"
 msgstr "편집기 크기"
 
-#: u-bp-forum-editor.php:258
+#: u-bp-forum-editor.php:318
 msgid "Width"
 msgstr "넓이"
 
-#: u-bp-forum-editor.php:260
+#: u-bp-forum-editor.php:321
 msgid "Height"
 msgstr "높이"
 
-#: u-bp-forum-editor.php:264
+#: u-bp-forum-editor.php:326
+msgid "Editor Skin"
+msgstr "편집기 스킨"
+
+#: u-bp-forum-editor.php:336
+msgid "Form Validate"
+msgstr "폼 검사"
+
+#: u-bp-forum-editor.php:339
+msgid "Validating whether form fields are filled out before submit post."
+msgstr "포스트 하기 전에 폼 필드들에 값이 입력되었는지 확인. "
+
+#: u-bp-forum-editor.php:344
+#: u-bp-forum-editor.php:378
+msgid "Primary Buttons group"
+msgstr "첫번째 버튼 꾸러미"
+
+#: u-bp-forum-editor.php:347
+#: u-bp-forum-editor.php:354
+msgid "Separate buttons with commas. Pipe character( | ) is visual separator."
+msgstr "콤마로 버튼을 구분하세요. 파이프 문자(|)는 시각적으로 분리해주는 역할을 해줍니다."
+
+#: u-bp-forum-editor.php:351
+#: u-bp-forum-editor.php:378
+msgid "Secondary Buttons group"
+msgstr "두번째 버튼 꾸러미"
+
+#: u-bp-forum-editor.php:356
+msgid "Available button reference"
+msgstr "사용가능한 버튼 목록"
+
+#: u-bp-forum-editor.php:362
+msgid "Extend TinyMCE Plugin"
+msgstr "TinyMCE 플러그인 확장"
+
+#: u-bp-forum-editor.php:364
+#: u-bp-forum-editor.php:376
+msgid "Plugin directory"
+msgstr "플러그인 디렉토리"
+
+#: u-bp-forum-editor.php:368
+#: u-bp-forum-editor.php:377
+msgid "Plugin names"
+msgstr "플러그인 이름"
+
+#: u-bp-forum-editor.php:370
+msgid "Separate plugin name with commas."
+msgstr "플러그인 이름을 쉼표로 구분하세요."
+
+#: u-bp-forum-editor.php:372
+msgid "How to install TinyMCE Plugin."
+msgstr "TinyMCE 플러그인 설치하는 방법"
+
+#: u-bp-forum-editor.php:381
+msgid "View more explaination."
+msgstr "자세한 설명 보기"
+
+#: u-bp-forum-editor.php:385
+msgid "Allowed Tags"
+msgstr "허용 태그"
+
+#: u-bp-forum-editor.php:387
+msgid "Default allowed tags"
+msgstr "기본 허용 태그"
+
+#: u-bp-forum-editor.php:395
+msgid "Additional tags"
+msgstr "추가 태그"
+
+#: u-bp-forum-editor.php:403
+msgid "For instance, if you would embed Youtube, select <code>iframe</code>. and if you would use old embed code(Flash), select <code>object, embed and param</code>."
+msgstr "예를들어, 유튜프를 포함시키려 한다면, <code>iframe</code>을 선택. 만약 예전 방식으로 코드를 삽입하려면(플래시), <code>object, embed and param</code>를 선택하세요."
+
+#: u-bp-forum-editor.php:404
+msgid "Some tags are never allowed. script, style, link."
+msgstr "일부 태그는 허용되지 않습니다. script, style, link."
+
+#: u-bp-forum-editor.php:408
 msgid "Editor Content CSS URL"
 msgstr "편집기 콘텐츠의 CSS URL"
 
-#: u-bp-forum-editor.php:267
+#: u-bp-forum-editor.php:411
 msgid "If you'd like to customize the Editor's content style, enter your own stylesheet file URL."
 msgstr "편집기 콘텐츠의 스타일을 바꾸고 싶다면, 스타일시트 파일의 주소를 입력하세요."
 
-#: u-bp-forum-editor.php:268
+#: u-bp-forum-editor.php:412
 #, php-format
 msgid "If you leave a blank, the %s CSS will be used."
 msgstr "공란으로 두면, %s 스타일이 적용됩니다."
 
-#: u-bp-forum-editor.php:268
+#: u-bp-forum-editor.php:412
 msgid "defaults"
 msgstr "기본"
 
-#: u-bp-forum-editor.php:274
+#: u-bp-forum-editor.php:418
 msgid "Save Changes"
 msgstr "변경사항 저장"
 
-#: u-bp-forum-editor.php:278
+#: u-bp-forum-editor.php:422
 msgid "Related Plugin"
 msgstr "연관 플러그인"
+
+#: u-bp-forum-editor.php:454
+msgid "Error: please fill the required fields."
+msgstr "에러: 필수 입력 사항을 입력하세요."
+
+#: u-bp-forum-editor.php:457
+msgid "Settings saved."
+msgstr "변경 사항 저장"
 
 #~ msgid ""
 #~ "If your are already using %s's Form validation, this plugin's form "
@@ -122,9 +182,6 @@ msgstr "연관 플러그인"
 #~ msgstr ""
 #~ "%s의 폼 검사를 이미 사용중이라면, 이 플러그인의 폼 검사는 실행되지 않습니"
 #~ "다."
-
-#~ msgid "Settings"
-#~ msgstr "설정"
 
 #~ msgid "Error: Please enter a subject."
 #~ msgstr "에러: 제목을 입력하세요."

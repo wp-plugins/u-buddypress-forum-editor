@@ -2,18 +2,31 @@
 Contributors: taehan
 Donate link: 
 Tags: BuddyPress, tinyMCE, WYSIWYG, editor, forum, form validate
-Requires at least: WordPress 3.0.0, BuddyPress 1.2.8
-Tested up to: 3.1.1
-Stable tag: 1.0.1
+Requires at least: WordPress 3.2.0, BuddyPress 1.2.9
+Tested up to: 3.2.0
+Stable tag: 1.1
 
-This plugin has the ability to convert HTML TEXTAREA fields to TinyMCE for BuddyPress Forum.
+This plugin is tinyMCE WYSIWYG HTML editor for BuddyPress Forum.
 
 == Description ==
 
-This plugin has the ability to convert HTML TEXTAREA fields to TinyMCE for BuddyPress Forum. Several options are provided, such as customizing button group, form validation, etc.
+This plugin is tinyMCE WYSIWYG HTML editor for BuddyPress Forum.
+
+Setting Options
+
+* enable/disable
+* Editor size
+* Editor skin (default, highcontrast, o2k7, wp_theme)
+* Customize buttons
+* Extend tinyMCE plugin
+* Select allowed tags
+* Form validator
+* etc
 
 If anything does not work please leave a comment at
 http://urlless.com/buddypress-plugin-u-buddypress-forum-editor/
+
+* Relevant plugin: http://wordpress.org/extend/plugins/u-buddypress-forum-attachment/
 
 == Installation ==
 1. Upload <code>u-buddypress-forum-editor</code> folder to the <code>/wp-content/plugins</code> directory. 
@@ -26,8 +39,15 @@ http://urlless.com/buddypress-plugin-u-buddypress-forum-editor/
 
 1. In action.
 2. Settings.
+3. Skin.
 
 == Changelog ==
+
+= 1.1 =
+* Skin option.
+* Size option.
+* tinyMCE plugin option.
+* Allowed tag option.
 
 = 1.0.1 =
 * Capability bug fixed on Multi-Site.
