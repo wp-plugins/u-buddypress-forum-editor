@@ -370,29 +370,6 @@ function admin_page(){
 				</td>
 			</tr>
 			<tr>
-				<th><?php _e('Extend TinyMCE Plugin', $this->id)?></th>
-				<td>
-					<p><strong><?php _e('Plugin directory', $this->id)?> :</strong>
-					<?php echo WP_PLUGIN_URL?>/
-					<input type="text" name="<?php echo $this->id?>[plugin_dir]" value="<?php echo $opts->plugin_dir;?>" ></p>
-					
-					<p><strong><?php _e('Plugin names', $this->id)?> :</strong>
-					<input type="text" name="<?php echo $this->id?>[plugins]" value="<?php echo $opts->plugins;?>" class="regular-text">
-					<span class="description"><?php _e('Separate plugin name with commas.', $this->id)?></span></p>
-					
-					<strong><?php _e('How to install TinyMCE Plugin.', $this->id)?></strong>
-					<ol style="color:#666">
-					<li>Download <a href="http://tinymce.moxiecode.com/download/download.php" target="_blank">tinyMCE</a>.</li>
-					<li>Upload your downloaded folder(<code>your-download/jscript/<strong>tiny_mce</strong></code>) to WordPress' plugin folder(<code><?php echo WP_PLUGIN_URL?></code>). you can rename this folder.</li>
-					<li>Fill the '<?php _e('Plugin directory', $this->id)?>' with the uploaded folder name</li>
-					<li>Fill the '<?php _e('Plugin names', $this->id)?>' with tinyMCE plugin names you want.</li>
-					<li>Add buttons to the '<?php _e('Primary Buttons group', $this->id)?>' or '<?php _e('Secondary Buttons group', $this->id)?>'. Button name is usually same with plugin name.</li>
-					<li>* 'media' is currently disabled, which has some errors I couldn't fix. if you would embed something like Flash, use the HTML dialog.</li>
-					</ol>
-					<p><a href="http://urlless.com/extending-tinymce-plugin-for-u-buddypress-forum-editor/" target="_blank"><?php _e('View more explaination.', $this->id)?></a></p>
-				</td>
-			</tr>
-			<tr>
 				<th><?php _e('Allowed Tags', $this->id)?></th>
 				<td>
 					<p><strong><?php _e('Default allowed tags', $this->id)?> :</strong></p>
@@ -423,6 +400,31 @@ function admin_page(){
 					<p class="description"><?php printf(__('If you leave a blank, the %s CSS will be used.', $this->id), '<a href="'.$this->url.'inc/content.css">'.__('defaults', $this->id).'</a>')?></p>
 				</td>
 			</tr>
+			<tr>
+				<th><?php _e('Extend TinyMCE Plugin', $this->id)?></th>
+				<td>
+					<p style="font-size:14px;"><strong><?php _e('How to extend TinyMCE plugin', $this->id)?></strong></p>
+					<p style="color:red"><?php _e('This is not required option.', $this->id)?></p>
+					<p><strong><?php _e('Plugin directory', $this->id)?> :</strong>
+					<?php echo WP_PLUGIN_URL?>/
+					<input type="text" name="<?php echo $this->id?>[plugin_dir]" value="<?php echo $opts->plugin_dir;?>" ></p>
+					
+					<p><strong><?php _e('Plugin names', $this->id)?> :</strong>
+					<input type="text" name="<?php echo $this->id?>[plugins]" value="<?php echo $opts->plugins;?>" class="regular-text">
+					<span class="description"><?php _e('Separate plugin name with commas.', $this->id)?></span></p>
+					
+					<ol style="color:#666">
+					<li>Download <a href="http://tinymce.moxiecode.com/download/download.php" target="_blank">tinyMCE</a>.</li>
+					<li>Upload your downloaded folder(<code>your-download/jscript/<strong>tiny_mce</strong></code>) to WordPress' plugin folder(<code><?php echo WP_PLUGIN_URL?></code>). you can rename this folder.</li>
+					<li>Fill the '<?php _e('Plugin directory', $this->id)?>' with the uploaded folder name</li>
+					<li>Fill the '<?php _e('Plugin names', $this->id)?>' with tinyMCE plugin names you want.</li>
+					<li>Add buttons to the '<?php _e('Primary Buttons group', $this->id)?>' or '<?php _e('Secondary Buttons group', $this->id)?>'. Button name is usually same with plugin name.</li>
+					<li>* 'media' is currently disabled, which has some errors I couldn't fix. if you would embed something like Flash, use the HTML dialog.</li>
+					</ol>
+					<p><a href="http://urlless.com/extending-tinymce-plugin-for-u-buddypress-forum-editor/" target="_blank"><?php _e('View more explaination.', $this->id)?></a></p>
+				</td>
+			</tr>
+			
 			</table>
 			
 			<p class="submit">
