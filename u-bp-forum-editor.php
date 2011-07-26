@@ -18,7 +18,6 @@ function UBPForumEditor(){
 	$this->url = plugin_dir_url(__FILE__);
 	
 	register_activation_hook( __FILE__, array(&$this, 'install') );
-	register_uninstall_hook( __FILE__, array(&$this, 'uninstall') );
 	
 	load_plugin_textdomain($this->id, false, dirname(plugin_basename(__FILE__)).'/languages/');
 	
