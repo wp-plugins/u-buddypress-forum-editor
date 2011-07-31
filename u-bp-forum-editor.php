@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: U BuddyPress Forum Editor
-Plugin URI: http://urlless.com/buddypress-plugin-u-buddypress-forum-editor/
+Plugin URI: http://urlless.com/u-buddypress-forum-editor/
 Description: This plugin is tinyMCE WYSIWYG HTML editor for BuddyPress Forum.
 Author: Taehan Lee
 Author URI: http://urlless.com

@@ -24,7 +24,7 @@ Setting Options
 * etc
 
 If anything does not work please leave a comment at
-http://urlless.com/buddypress-plugin-u-buddypress-forum-editor/
+http://urlless.com/u-buddypress-forum-editor/
 
 * Relevant plugin: http://wordpress.org/extend/plugins/u-buddypress-forum-attachment/
 
