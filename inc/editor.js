@@ -114,6 +114,7 @@ var switchEditors = {
 				ta.style.height = ed.getContentAreaContainer().offsetHeight + 24 + 'px';
 				ed.hide();
 			}
+			ta.focus();
 
 			//qt.style.display = 'block';
 		}
