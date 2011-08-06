@@ -4,7 +4,7 @@ Donate link:
 Tags: BuddyPress, tinyMCE, WYSIWYG, editor, forum, form validate
 Requires at least: WordPress 3.2.0, BuddyPress 1.2.9
 Tested up to: 3.2.0
-Stable tag: 1.2
+Stable tag: 1.2.1
 
 This plugin is tinyMCE WYSIWYG HTML editor for BuddyPress Forum.
 
@@ -42,6 +42,11 @@ http://urlless.com/buddypress-plugin-u-buddypress-forum-editor/
 3. Settings.
 
 == Changelog ==
+
+= 1.2.1 =
+* Device checking.
+* Fixes Editor switch & content form field CSS.
+* Fixes Form-validate.
 
 = 1.2 =
 * Strip p tag befor save post.

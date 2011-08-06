@@ -47,7 +47,7 @@ var bp_forum_form_validate = {
 		// content
 		jQuery('textarea.theEditor', t.form).filter(function(){
 			var id = this.id ? this.id : this.name;
-			var content = (typeof tinyMCE=='object' && typeof tinyMCE.get(id)=='object') ? tinyMCE.get(id).getContent() : this.value;
+			var content = (typeof tinyMCE=='object' && typeof tinyMCE.get(id)=='object' && this.style.display=='none') ? tinyMCE.get(id).getContent() : this.value;
 			if( jQuery.trim(content)=='' )
 				t.show_error('content_error');
 		});

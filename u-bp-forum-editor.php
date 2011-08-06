@@ -5,13 +5,13 @@ Plugin URI: http://urlless.com/buddypress-plugin-u-buddypress-forum-editor/
 Description: This plugin is tinyMCE WYSIWYG HTML editor for BuddyPress Forum.
 Author: Taehan Lee
 Author URI: http://urlless.com
-Version: 1.2
+Version: 1.2.1
 */
 
 class UBPForumEditor {
 	
 var $id = 'ubpfeditor';
-var $ver = '1.2';
+var $ver = '1.2.1';
 var $url, $path;
 
 function UBPForumEditor(){
@@ -33,10 +33,10 @@ function bp_init(){
 	if ( ($bp->current_component=='groups' AND $bp->current_action == 'forum')
 		|| ($bp->current_component=='forums' AND $bp->current_action == '') ){
 		
-		$opts = get_option($this->id);
-	
-		if( empty($opts['enable']) || (empty($opts['enable_topic']) AND empty($opts['enable_reply'])) ) 
+		if( ! $this->is_enable() )
 			return false;
+		
+		$opts = get_option($this->id);
 		
 		wp_enqueue_script('jquery');
 		wp_enqueue_style( $this->id.'-editor', $this->url.'inc/editor.css', '', $this->ver);
@@ -53,10 +53,29 @@ function bp_init(){
 		
 		add_filter( 'bp_get_the_topic_text', array(&$this, 'richedit_pre'), 100 );
 		add_filter( 'bp_get_the_topic_post_edit_text', array(&$this, 'richedit_pre'), 100 );
+		add_action( 'wp_footer', array(&$this, 'the_editor'));
+		
 		remove_filter( 'bp_get_the_topic_latest_post_excerpt', 'bp_forums_filter_kses', 1 );
 		remove_filter( 'bp_get_the_topic_post_content', 'bp_forums_filter_kses', 1 );
-		add_action( 'wp_footer', array(&$this, 'the_editor'));
 	}
+}
+
+function is_enable(){
+	global $is_iphone;
+	
+	$opts = get_option($this->id);
+	
+	if( empty($opts['enable']) || (empty($opts['enable_topic']) AND empty($opts['enable_reply'])) ) 
+		return false;
+	
+	if( !$is_iphone && // this includes all Safari mobile browsers
+		( ( preg_match( '!AppleWebKit/(\d+)!', $_SERVER['HTTP_USER_AGENT'], $match ) && intval($match[1]) >= 420 ) ||
+		!preg_match( '!opera[ /][2-8]|konqueror|safari!i', $_SERVER['HTTP_USER_AGENT'] ) ) ) {
+	} else {
+		return false;
+	}
+	
+	return true;
 }
 
 function richedit_pre($text){
@@ -93,12 +112,14 @@ function the_editor( ) {
 	}
 	$allowed_tags = join(',', $allowed_tags_array);
 	
+	$opts['width'] = empty($opts['width']) ? 100 : absint($opts['width']);
+	$opts['height'] = empty($opts['height']) ? 400 : absint($opts['height']);
 	
 	$initArray = array (
 		'mode' => 'specific_textareas',
 		'editor_selector' => 'theEditor',
-		'width' => $opts['width'] ? $opts['width'] : '100%',
-		'height' => $opts['height'] ? $opts['height'] : 400,
+		'width' => $opts['width'],
+		'height' => $opts['height'],
 		'theme' => 'advanced',
 		'skin' => $opts['skin'] ? $opts['skin'] : 'default',
 		'theme_advanced_buttons1' => $opts['buttons1'],
@@ -174,6 +195,7 @@ jQuery(function(){
 		toolbar += '<a id="edButtonHTML" class="" onclick="switchEditors.go(\''+this.id+'\', \'html\');"><?php _e('HTML', $this->id)?></a>';
 		toolbar += '</div>';
 		jQuery(this).wrap('<span class="<?php echo $this->id?>-wrap <?php echo $opts['skin']?>"></span>').before(toolbar);
+		jQuery(this).css('width', '<?php echo ($opts['width']-4)?>px !important');
 	});
 	
 	tinyMCEPreInit = { base : "<?php echo $baseurl; ?>", suffix : "", query : "<?php echo $version; ?>", mceInit : {<?php echo $mce_options; ?>}, load_ext : function(url,lang){ var sl=tinymce.ScriptLoader; sl.markDone(url+'/langs/'+lang+'.js'); sl.markDone(url+'/langs/'+lang+'_dlg.js');} }; (function(){ var t=tinyMCEPreInit, sl=tinymce.ScriptLoader, ln=t.mceInit.language, th=t.mceInit.theme, pl=t.mceInit.plugins; sl.markDone(t.base+'/langs/'+ln+'.js'); sl.markDone(t.base+'/themes/'+th+'/langs/'+ln+'.js'); sl.markDone(t.base+'/themes/'+th+'/langs/'+ln+'_dlg.js'); })(); 
@@ -184,12 +206,7 @@ jQuery(function(){
 });
 </script>
 
-<style>
-#ubpfeditor-error {
-	<?php if($opts['width']) echo 'width:'.(intval($opts['width'])-30).'px;'?> 
-	background: #FFEBE8; border: 1px solid #C66; color: #AA0000; padding: 6px 15px; margin: 20px 0; border-radius: 3px; display: none; 
-}
-</style>
+<style>#ubpfeditor-error { width: <?php echo ($opts['width']-30)?>px; }</style>
 <?php
 }
 
