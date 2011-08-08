@@ -104,11 +104,7 @@ function the_editor( ) {
 	$allowed_tags_array = array();
 	$allowed_tags = $this->allowed_tags();
 	foreach( $allowed_tags as $k=>$v){
-		$attr = '';
-		if( !empty($v) ) {
-			$attr = '['.join('|', array_keys($v)).']';
-		}
-		$allowed_tags_array[] = $k.$attr;
+		$allowed_tags_array[] = $k.'[*]';
 	}
 	$allowed_tags = join(',', $allowed_tags_array);
 	
