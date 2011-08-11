@@ -6,6 +6,7 @@ Description: This plugin is tinyMCE WYSIWYG HTML editor for BuddyPress Forum.
 Author: Taehan Lee
 Author URI: http://urlless.com
 Version: 1.2.1
+Network: true
 */
 
 class UBPForumEditor {
@@ -30,8 +31,8 @@ function UBPForumEditor(){
 function bp_init(){
 	global $bp;
 	
-	if ( ($bp->current_component=='groups' AND $bp->current_action == 'forum')
-		|| ($bp->current_component=='forums' AND $bp->current_action == '') ){
+	if ( ($bp->current_component==BP_GROUPS_SLUG AND bp_current_action()=='forum')
+		|| ($bp->current_component==BP_FORUMS_SLUG AND bp_current_action()=='') ){
 		
 		if( ! $this->is_enable() )
 			return false;
