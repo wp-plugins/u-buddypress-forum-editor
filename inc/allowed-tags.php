@@ -1,4 +1,5 @@
 <?php
+global $default_allowedtags, $full_allowedtags;
 $default_allowedtags = array(
 'a',
 'abbr',
@@ -12,6 +13,9 @@ $default_allowedtags = array(
 'code',
 'del',
 'div',
+'dl',
+'dt',
+'dd',
 'em',
 'font',
 'hr',
@@ -20,16 +24,18 @@ $default_allowedtags = array(
 'li',
 'p',
 'pre',
+'small',
 'span',
 'strike',
 'strong',
 'sub',
 'sup',
 'table',
+'thead',
 'tbody',
+'tfoot',
 'td',
 'th',
-'thead',
 'tr',
 'u',
 'ul',
@@ -54,18 +60,6 @@ $full_allowedtags = array(
 	'title' => array ()),
 'acronym' => array(
 	'title' => array ()),
-'article' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
-	'style' => array ()),
-'aside' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
-	'style' => array ()),
 'b' => array(),
 'big' => array(),
 'blockquote' => array(
@@ -75,11 +69,6 @@ $full_allowedtags = array(
 	'lang' => array()),
 'br' => array (
 	'class' => array ()),
-'button' => array(
-	'disabled' => array (),
-	'name' => array (),
-	'type' => array (),
-	'value' => array ()),
 'caption' => array(
 	'align' => array (),
 	'class' => array ()),
@@ -90,25 +79,9 @@ $full_allowedtags = array(
 	'title' => array ()),
 'code' => array (
 	'style' => array()),
-'col' => array(
-	'align' => array (),
-	'char' => array (),
-	'charoff' => array (),
-	'span' => array (),
-	'dir' => array(),
-	'style' => array (),
-	'valign' => array (),
-	'width' => array ()),
 'del' => array(
 	'datetime' => array ()),
 'dd' => array(),
-'details' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
-	'open' => array (),
-	'style' => array ()),
 'div' => array(
 	'align' => array (),
 	'class' => array (),
@@ -119,36 +92,10 @@ $full_allowedtags = array(
 'dt' => array(),
 'em' => array(),
 'fieldset' => array(),
-'figure' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
-	'style' => array ()),
-'figcaption' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
-	'style' => array ()),
 'font' => array(
 	'color' => array (),
 	'face' => array (),
 	'size' => array ()),
-'footer' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
-	'style' => array ()),
-'form' => array(
-	'action' => array (),
-	'accept' => array (),
-	'accept-charset' => array (),
-	'enctype' => array (),
-	'method' => array (),
-	'name' => array (),
-	'target' => array ()),
 'h1' => array(
 	'align' => array (),
 	'class' => array (),
@@ -178,18 +125,6 @@ $full_allowedtags = array(
 	'align' => array (),
 	'class' => array (),
 	'id'    => array (),
-	'style' => array ()),
-'header' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
-	'style' => array ()),
-'hgroup' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
 	'style' => array ()),
 'hr' => array (
 	'align' => array (),
@@ -221,16 +156,6 @@ $full_allowedtags = array(
 'li' => array (
 	'align' => array (),
 	'class' => array ()),
-'menu' => array (
-	'class' => array (),
-	'style' => array (),
-	'type' => array ()),
-'nav' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
-	'style' => array ()),
 'p' => array(
 	'class' => array (),
 	'align' => array (),
@@ -243,6 +168,7 @@ $full_allowedtags = array(
 'q' => array(
 	'cite' => array ()),
 's' => array(),
+'small' => array(),
 'span' => array (
 	'class' => array (),
 	'dir' => array (),
@@ -250,21 +176,9 @@ $full_allowedtags = array(
 	'lang' => array (),
 	'style' => array (),
 	'title' => array ()),
-'section' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
-	'style' => array ()),
 'strike' => array(),
 'strong' => array(),
 'sub' => array(),
-'summary' => array(
-	'align' => array (),
-	'class' => array (),
-	'dir' => array (),
-	'lang' => array(),
-	'style' => array ()),
 'sup' => array(),
 'table' => array(
 	'align' => array (),
@@ -302,12 +216,6 @@ $full_allowedtags = array(
 	'style' => array (),
 	'valign' => array (),
 	'width' => array ()),
-'textarea' => array(
-	'cols' => array (),
-	'rows' => array (),
-	'disabled' => array (),
-	'name' => array (),
-	'readonly' => array ()),
 'tfoot' => array(
 	'align' => array (),
 	'char' => array (),
@@ -336,7 +244,6 @@ $full_allowedtags = array(
 	'charoff' => array (),
 	'class' => array (),
 	'valign' => array ()),
-'title' => array(),
 'tr' => array(
 	'align' => array (),
 	'bgcolor' => array (),
@@ -357,29 +264,6 @@ $full_allowedtags = array(
 	'style' => array (),
 	'type' => array ()),
 'var' => array (),
-/*
-'script' => array(
-	'charset' => array (),
-	'defer' => array (),
-	'language' => array (),
-	'src' => array (),
-	'type' => array (),
-),
-'style' => array(
-	'lang' => array (),
-	'media' => array (),
-	'title' => array (),
-	'type' => array (),
-	'dir' => array (),
-),
-'link' => array(
-	'rel' => array (),
-	'href' => array (),
-	'type' => array (),
-	'media' => array (),
-	'dir' => array (),
-),
-*/
 'applet' => array(
 	'id' => array (),
 	'alt' => array (),
@@ -424,32 +308,6 @@ $full_allowedtags = array(
 	'value' => array (),
 ),
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
