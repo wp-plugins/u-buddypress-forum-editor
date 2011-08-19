@@ -20,7 +20,6 @@ function UBPForumEditor(){
 	$this->path = plugin_dir_path(__FILE__);
 	
 	register_activation_hook( __FILE__, array(&$this, 'activation') );
-	register_deactivation_hook( __FILE__, array(&$this, 'deactivation') );
 	
 	load_plugin_textdomain($this->id, false, dirname(plugin_basename(__FILE__)).'/languages/');
 	
@@ -435,12 +434,6 @@ function activation() {
 	register_uninstall_hook( __FILE__, 'ubpfeditor_uninstall' );
 	
 	$this->get_option();
-	
-	global $u_api; if( $u_api ) $u_api->plugin_activation($this->id, $this->ver);
-}
-
-function deactivation(){
-	global $u_api; if( $u_api ) $u_api->plugin_deactivation($this->id, $this->ver);
 }
 
 function admin_init(){
@@ -639,8 +632,6 @@ function admin_page(){
 		jQuery('#allow-all-additional-tags').click(function(){ if( this.checked ){ jQuery('.additional-tags input').attr('checked', 'checked'); }else{ jQuery('.additional-tags input').removeAttr('checked'); }});
 		</script>
 		
-		<?php global $u_api; if( $u_api ) $u_api->plugin_admin_sidebar();?>
-		
 	</div>
 	<?php
 }
@@ -677,4 +668,3 @@ function ubpfeditor_uninstall(){
 	delete_option('ubpfeditor');
 }
 
-include('inc/u-api.php');
