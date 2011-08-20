@@ -48,6 +48,7 @@ http://urlless.com/u-buddypress-forum-editor/
 * Added: Paragraph margin remover
 * Added: Buttons line 3, 4
 * Added: Enable media plugin(WP 3.2)
+* Added: French translation courtesy of Emmanuel Zimmert
 * Changed: Allowed tags list
 * Changed: Editor width unit
 * Fixed: List elements display error when edit post
