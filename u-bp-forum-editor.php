@@ -23,7 +23,8 @@ function UBPForumEditor(){
 	
 	load_plugin_textdomain($this->id, false, dirname(plugin_basename(__FILE__)).'/languages/');
 	
-	add_action( is_multisite() ? 'network_admin_menu' : 'admin_menu', array(&$this, 'admin_menu') );
+	add_action( 'admin_menu', array(&$this, 'admin_menu') );
+	add_action( 'network_admin_menu', array(&$this, 'admin_menu') );
 	add_action( 'admin_init', array(&$this, 'admin_init') );
 	add_action( 'bb_init', array(&$this, 'bb_init') );
 }
