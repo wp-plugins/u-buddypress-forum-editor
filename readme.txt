@@ -8,5 +8,5 @@ Rich text editor for BuddyPress
 == Description ==
 
 This plugin no longer works properly on recent BuddyPress and WordPress version.
-Instead, You can download the newer version of it below.
-http://urlless.com/?p=2785
+
+Instead, You can download the newer version of it <a href="http://urlless.com/?p=2785">here</a>.
