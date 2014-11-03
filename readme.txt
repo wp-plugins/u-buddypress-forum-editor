@@ -3,7 +3,7 @@ Contributors: taehan
 Tags: BuddyPress, BP, tinyMCE, WYSIWYG, Richtext
 Tested up to: 3.2.0
 
-Rich text editor for BuddyPress
+Rich text editor for BuddyPress Forum
 
 == Description ==
 
