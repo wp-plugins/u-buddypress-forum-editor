@@ -1,4 +1,4 @@
-=== U BuddyPress Forum Editor ===
+=== BuddyPress Forum Editor ===
 Contributors: taehan
 Tags: BuddyPress, BP, tinyMCE, WYSIWYG, Richtext
 Tested up to: 3.2.0
